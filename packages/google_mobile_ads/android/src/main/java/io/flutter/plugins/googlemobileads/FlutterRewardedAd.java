@@ -152,8 +152,9 @@ class FlutterRewardedAd extends FlutterAd.FlutterOverlayAd {
   }
 
   void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-    manager.onRewardedAdUserEarnedReward(
-        adId, new FlutterRewardItem(rewardItem.getAmount(), rewardItem.getType()));
+    manager.onAdClosed(rewardItem);
+    // manager.onRewardedAdUserEarnedReward(
+    //     adId, new FlutterRewardItem(rewardItem.getAmount(), rewardItem.getType()));
   }
 
   @Override
